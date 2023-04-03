@@ -71,16 +71,14 @@ public class AddTodoActivity extends AppCompatActivity {
                 todo.setName(Name.getText().toString());
                 todo.setUrgency(Urgency.getSelectedItem().toString());
                 TodoDatabase.getDb(context).todoDAO().add(todo);
-                Intent intent = new Intent(context, MainActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
 
         Cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, MainActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
     }
